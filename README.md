@@ -14,9 +14,6 @@ ollama pull granite3.2-vision
 ollama pull moondream
 ```
 
-
-llama3.2:3b
-
 ### To list available model
 
 ```bash
