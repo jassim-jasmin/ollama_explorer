@@ -69,7 +69,7 @@ class OCRImage:
         }
 
         if image_path:
-            if image_path.suffix == '.png':
+            if image_path.suffix in ['.png', '.jpeg']:
                 with open(cls._preprocess_image(image_path), "rb") as image_file:
                     content = image_file.read()
 

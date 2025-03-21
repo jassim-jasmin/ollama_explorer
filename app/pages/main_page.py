@@ -10,6 +10,8 @@ from pathlib import Path
 
 from app.components.general_css import markdown_css
 from app.components.about_markdown import about_markdown
+from app.components.constants import data_input_format, supported_file_format
+
 from utils.image_helper import OCRImage
 from utils.model_helper import model_directory
 
@@ -39,7 +41,7 @@ def side_bar_controls():
 
         format_type = st.selectbox(
             "📄 Output Format",
-            ["text", "markdown", "json", "structured", "key_value", "table"],
+            data_input_format,
             help="Choose how you want the extracted text to be formatted"
         )
 
@@ -60,7 +62,6 @@ def side_bar_controls():
 
 
 def image_file_upload_bar():
-    supported_file_format = ['png', 'jpg', 'jpeg', 'tiff', 'bmp', 'pdf', 'txt']
     # File upload area with multiple file support
     uploaded_files = st.file_uploader(
         "Drop your images here",
